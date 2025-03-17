@@ -40,7 +40,7 @@ function Task({ task, editTask, deleteTask, toggleCompletion }) {
         />
       )}
 
-      <div className='row align-items-center w-25'>
+      <div className='row align-items-center w-25 shadow py-2 rounded-3 mt-3'>
         
         <div className="fs-2 col-md-6"
           style={{
