@@ -1,28 +1,43 @@
 import { useState } from "react";
-
+import { toast } from 'react-toastify';
 function AddTask({ addTask }) {
   const [taskName, setTaskName] = useState('');
 
   const handleAddClick = () => {
-    const newTask = {
-      id: Date.now(),
-      name: taskName,
-      isEditing: false,
-    };
-    addTask(newTask);
-    setTaskName('');
+    if (taskName.length == 0) {
+      console.log("Hii")
+      toast.error('Task Can Not Be Empty', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+          });
+    }
+    else{
+      const newTask = {
+        id: Date.now(),
+        name: taskName,
+        isEditing: false,
+      };
+      addTask(newTask);
+      setTaskName('');
+    }
   };
 
   return (
-    <div className="d-flex gap-3">
+    <div className="d-flex gap-3 w-25">
       <input
         type="text"
         value={taskName}
         onChange={(e) => setTaskName(e.target.value)}
         placeholder="Enter task"
-        className="form-control"
+        className="form-control fs-3 px-3"
       />
-      <button onClick={handleAddClick} className="btn btn-primary">Add</button>
+      <button onClick={handleAddClick} className="btn btn-primary px-3 py-2 fs-4">Add</button>
     </div>
   );
 }

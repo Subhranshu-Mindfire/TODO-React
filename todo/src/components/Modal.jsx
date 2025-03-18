@@ -8,22 +8,22 @@ function Modal({ task, closeModal, saveEdit, cancelEdit }) {
     setTaskName(e.target.value);
   };
 
-  
+
   const handleSaveClick = () => {
     if (taskName.trim()) {
-      saveEdit(task.id, taskName); 
-      closeModal(); 
+      saveEdit(task.id, taskName);
+      closeModal();
     }
   };
 
   const handleCancelClick = () => {
-    cancelEdit(); 
+    cancelEdit();
     closeModal();
   };
 
   return (
     <div className="modal-overlay">
-      <div className="modal-content w-25 h-25">
+      <div className="modal-content w-25">
         <h2>Edit Task</h2>
         <input
           type="text"
@@ -34,8 +34,8 @@ function Modal({ task, closeModal, saveEdit, cancelEdit }) {
 
         />
         <div className="d-flex justify-content-end mt-3 gap-2">
-        <button className="btn btn-primary" onClick={handleSaveClick}>Save</button>
-        <button className="btn btn-secondary" onClick={handleCancelClick}>Cancel</button>
+          <button className="btn btn-primary" onClick={handleSaveClick}>Save</button>
+          <button className="btn btn-secondary" onClick={handleCancelClick}>Cancel</button>
         </div>
       </div>
     </div>
