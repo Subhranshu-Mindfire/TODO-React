@@ -26,6 +26,7 @@ function Tasklist() {
   };
 
   const editTask = (id, updatedTask) => {
+    console.log(id, updatedTask)
     setTasks((prevTasks) =>
       prevTasks.map((task) => (task.id === id ? updatedTask : task))
     );
@@ -55,6 +56,7 @@ function Tasklist() {
               editTask={editTask}
               deleteTask={deleteTask}
               toggleCompletion={toggleCompletion}
+              setTasks={setTasks}
             />
           ))}
         </div>
