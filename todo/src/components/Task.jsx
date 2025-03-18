@@ -48,6 +48,7 @@ function Task({ task, editTask, deleteTask, toggleCompletion }) {
           }}>
           {task.name}
         </div>
+        
         <div onClick={handleToggleCompletion} className="btn fs-3 col-md-1">
           {task.completed ? <i className="fa-solid fa-circle-check" style={{ color: "greenyellow" }}></i> : <i className="fa-solid fa-circle-check" style={{ color: "gray" }}></i>}
         </div>
