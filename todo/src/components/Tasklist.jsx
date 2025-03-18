@@ -23,6 +23,16 @@ function Tasklist() {
 
   const deleteTask = (id) => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    toast.success('Task Deleted Successfully', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light"
+    });
   };
 
   const editTask = (id, updatedTask) => {
@@ -30,6 +40,16 @@ function Tasklist() {
     setTasks((prevTasks) =>
       prevTasks.map((task) => (task.id === id ? updatedTask : task))
     );
+    toast.success('Task Edited Successfully', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light"
+    });
   };
 
   const toggleCompletion = (id) => {

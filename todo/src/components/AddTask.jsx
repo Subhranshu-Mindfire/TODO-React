@@ -35,9 +35,9 @@ function AddTask({ addTask }) {
         value={taskName}
         onChange={(e) => setTaskName(e.target.value)}
         placeholder="Enter task"
-        className="form-control fs-3 px-3"
+        className="form-control fs-4 px-3"
       />
-      <button onClick={handleAddClick} className="btn btn-primary px-3 py-2 fs-4">Add</button>
+      <button onClick={handleAddClick} className="btn btn-lg btn-primary px-3">Add</button>
     </div>
   );
 }
